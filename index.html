@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xiqiao Chen</title>
+    <!-- 加载 Montserrat 字体，支持 100 和 400 字重 -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    <!-- 加载 Space Grotesk 字体，支持 300;700 字重 -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="web-banner">
+        <div class="navigation">
+            <div class="logo">Xiqiao Chen</div>
+            <div class="contact-info">
+                <div class="email"><span>xiqiao.cc@gmail</span></div>
+                <div class="phone"><span>+1.857.472.4169</span></div>
+            </div>
+            <div class="lang-switch">
+                <span class="lang" data-lang="en">En</span>
+                /<span class="lang" data-lang="zh">中</span>
+            </div>
+        </div>
+        <ul class="tabs">
+            <!-- Work tab -->
+            <li class="tab" data-tab="work"><span>Work</span></li>
+            <!-- 第一个斜杠 / 独立显示在 Work 和 About 之间 -->
+            <li class="tab-slash" data-tab="slash"><span>/</span></li>
+            <!-- About tab -->
+            <li class="tab" data-tab="about"><span>About</span></li>
+            <!-- 第二个斜杠 / 独立显示在 About 和 Shop 之间 -->
+            <li class="tab-slash" data-tab="slash"><span>/</span></li>
+            <!-- Shop tab -->
+            <li class="tab" data-tab="shop"><span>Shop</span></li>
+        </ul>
+        <div class="separator-line"></div>
+    </header>
+    <div id="content-container">
+        <!-- 主页面视频 -->
+        <div class="content-section" id="home-content">
+            <video id="home-video" autoplay muted playsinline style="width: 100%; max-width: 100%; height: auto;"></video>
+        </div>
+
+        <!-- Tab 内容 -->
+        <div class="content-section" id="work-content">
+            <div class="language-content en" style="display: block;">
+                <p>Xiqiao Chen Portfolio - English Version</p>
+            </div>
+            <div class="language-content zh" style="display: none;">
+                <p>陈溪桥作品集 - 中文版</p>
+            </div>
+        </div>
+        <div class="content-section" id="about-content">
+            <div class="language-content en" style="display: block;">
+                <div class="bio-text first-paragraph">
+                    <p>Xiqiao Chen is a graphic designer based in Boston area. She focus on publication, identity systems, exhibition visual system and UI/UX design. She is good at observation, full of curiosity and always ready to try new possibilities.</p>
+                </div>
+                <div class="bio-text second-paragraph">
+                    <p>She received a MFA from Boston University and BFA from Sichuan Fine Arts Institute. Previously, she worked as a graphic designer at Linqing Yang Studio in Beijing. Her clients include Goethe Institute, 798 Art Bridge Gallery, Shanghai Translation Publishing House, Today Art Museum, Beijing Times Art Museum, Chongqing Yunma Brand Design Consultant Co.</p>
+                </div>
+            </div>
+            <div class="language-content zh" style="display: none;">
+                <div class="bio-text first-paragraph">
+                    <p>陈溪桥是来自波士顿地区的平面设计师。她的创作专注于出版物设计、视觉识别系统、展览视觉系统以及UI/UX设计。她善于观察，充满好奇心，并且随时准备尝试新的可能性。</p>
+                </div>
+                <div class="bio-text second-paragraph">
+                    <p>她拥有波士顿大学艺术硕士和四川美术学院艺术学士学位。曾在北京杨麟工作室担任平面设计师。合作客户包括歌德学院、798艺术桥画廊、上海译文出版社、今日美术馆、北京时代美术馆和重庆云码品牌设计顾问有限公司。</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section" id="shop-content">
+            <div class="language-content en" style="display: block;">
+                <p>Xiqiao Chen Shop - English Version</p>
+            </div>
+            <div class="language-content zh" style="display: none;">
+                <p>陈溪桥作品商店 - 中文版</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
