@@ -302,6 +302,8 @@ video::-webkit-media-controls {
     font-size: 18px;     /* 设置字体大小为18px */
     line-height: 26px;   /* 设置行高为26px */
     text-align: left;    /* 文本左对齐 */
+    font-weight: 400;    /* 显式设置字重为400 */
+    letter-spacing: 0%;  /* 设置字母间距为0% */
 }
 
 .first-paragraph {
@@ -313,7 +315,7 @@ video::-webkit-media-controls {
 
 .second-paragraph {
     position: absolute;  /* 绝对定位 */
-    top: 411px;          /* 距离顶部411px */
+    top: 471px;          /* 距离顶部471px */
     left: 315px;         /* 距离左侧315px */
     height: 235px;       /* 设置高度为235px */
 }
