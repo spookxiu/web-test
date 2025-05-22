@@ -6,19 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentTab = null;
     let currentLang = "en"; // 默认语言改为英文
 
-    // 初始化视频元素
-    const homeVideo = document.getElementById("home-video");
-    if (homeVideo) {
-        // 使用一个公开的测试视频源
-        homeVideo.src = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
-        homeVideo.type = "video/mp4";
-        
-        // 尝试播放视频
-        homeVideo.play().catch(err => {
-            console.error("Video autoplay failed:", err);
-        });
-    }
-
     // 语言切换元素
     const langSwitchers = document.querySelectorAll(".lang");
     
@@ -81,12 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (homeContent) {
                 homeContent.style.display = "none";
             }
-            
-            // 暂停视频播放
-            if (homeVideo && !homeVideo.paused) {
-                homeVideo.pause();
-            }
-            
+ 
             // 显示分隔线
             if (separatorLine) {
                 separatorLine.classList.add("active");
@@ -97,14 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const homeContent = document.getElementById("home-content");
             if (homeContent) {
                 homeContent.style.display = "block";
-            }
-            
-            // 重新播放视频
-            if (homeVideo) {
-                homeVideo.currentTime = 0;
-                homeVideo.play().catch(err => {
-                    console.error("Video restart failed:", err);
-                });
             }
             
             // 隐藏分隔线

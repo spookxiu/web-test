@@ -3,24 +3,30 @@
 }
 
 .web-banner {
-    width: 1728px;        /* 设置容器宽度为1728px */
+    width: 100%;         /* 设置容器宽度为1728px */
     height: 226px;       /* 设置容器高度为226px */
-    margin: 0 auto;      /* 水平居中对齐 */
-    background-color: white; /* 设置背景颜色为白色 */
-    position: relative;  /* 改为relative定位以作为子元素的定位基准 */
+    min-width: 1194px;   /* 设置最小宽度为1194px */;
+    max-width: 1728px;   /* 设置最大宽度为1728px */;
+    background-color: transparent; /* 背景颜色为透明 */
+    position: fixed;     /* 修改为fixed定位，使其固定在页面顶部 */
+    top: 0;              /* 距离顶部0 */
+    left: 0;             /* 距离左侧0 */
     display: flex;       /* 使用flex布局 */
     flex-direction: column; /* 子元素垂直排列 */
+    z-index: 1000;       /* 设置较高的层级，确保覆盖其他内容 */
 }
 
 .navigation {
-    width: 1728px;       /* 设置容器宽度为1728px */
+    width: 100%;         /* 设置容器宽度为1728px */
     height: 93px;        /* 设置容器高度为93px */
+    max-width: 1728px;   /* 添加最大宽度为1728px */
     gap: 111px;          /* 设置子元素间距为111px */
     padding-top: 32px;   /* 设置上内边距为32px */
     padding-right: 32px; /* 设置右内边距为32px */
     padding-left: 32px;  /* 设置左内边距为32px */
     display: flex;       /* 使用flex布局 */
     align-items: flex-start; /* 修改对齐方式为顶部对齐 */
+    position: relative;  /* 添加相对定位，使子元素可以相对于此容器定位 */
 }
 
 .logo {
@@ -36,8 +42,9 @@
 }
 
 .contact-info {
-    width: 1212px;       /* 设置宽度为1212px */
+    width: 100%;       /* 设置宽度为1212px */
     height: 51px;        /* 设置高度为51px */
+    max-width: 1212px; /* 添加最大宽度为1212px */
     font-family: 'Space Grotesk', sans-serif; /* 设置字体家族 */
     font-size: 18px;     /* 设置字体大小为18px */
     font-weight: 400;    /* 设置字体粗细为400 */
@@ -49,14 +56,14 @@
 }
 
 .contact-info > div {
-    width: 1212px;       /* 设置宽度为1212px */
+    width: 100%;       /* 设置宽度为1212px */
     height: 27px;        /* 设置高度为27px */
     display: flex;       /* 使用flex布局 */
     align-items: center; /* 垂直居中对齐 */
 }
 
 .phone {
-    width: 1110px;       /* 特定宽度 */
+    width: 100%;       /* 特定宽度 */
 }
 
 .lang-switch {
@@ -69,6 +76,7 @@
     cursor: pointer;     /* 鼠标悬停时显示为手型 */
     white-space: nowrap; /* 禁止换行 */
     align-self: flex-start; /* 与logo保持相同的顶部对齐方式 */
+    margin-right: 0;
     position: relative;  /* 改为相对定位以避免超出容器 */
     right: 0;           /* 调整右侧位置，确保不超出容器 */
 }
@@ -94,7 +102,7 @@
 }
 
 .tabs {
-    width: 1728px;       /* 设置容器宽度为1728px */
+    width: auto;       /* 设置容器宽度为1728px */
     height: 132px;       /* 设置容器高度为132px */
     display: flex;       /* 使用flex布局 */
     gap: 6px;            /* 设置子元素间距为6px */
@@ -118,7 +126,8 @@
     cursor: pointer;
     transition: transform 0.2s ease, color 0.2s ease;
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: end;
     flex-direction: row-reverse;
     position: relative;
 }
@@ -229,35 +238,27 @@
 /* 主页面视频仅在无tab选中时显示 */
 #home-content {
     display: block;      /* 默认显示主页内容 */
+    cursor: pointer;     /* 鼠标悬停时显示为手型 */
 }
 
 #content-container {
+    width: 100%;         /* 宽度设置为100%，填充父级容器 */
     max-width: 1728px;   /* 设置最大宽度为1728px，防止布局过宽 */
-    margin: 0 auto;      /* 水平居中对齐 */
-    padding: 0 20px;     /* 添加左右内边距以避免贴边 */
-    box-sizing: border-box; /* 确保内边距不影响宽度计算 */
-}
-
-#video-container {
-    width: 1728px;       /* 设置宽度为1728px */
-    height: 890px;       /* 设置高度为890px */
-    margin: 0 auto;      /* 水平居中对齐 */
-    background-color: #e0e0e0; /* 设置背景颜色为#e0e0e0 */
-    display: flex;       /* 使用flex布局 */
-    justify-content: center; /* 水平居中对齐 */
-    align-items: center; /* 垂直居中对齐 */
-    gap: 10px;           /* 设置子元素间距为10px */
+    height: auto;      /* 设置高度为1380px */
+    left: 0px;             /* 距离左侧0 */
+    padding: 0px;       /* 添加左右内边距以避免贴边 */
+    padding-top: 226px;  /* 修改为226px，与web-banner的高度一致 */
 }
 
 #home-video {
     width: 100%;         /* 宽度填充容器 */
-    max-width: 100%;     /* 最大宽度为100% */
-    height: auto;        /* 自动高度 */
-}
-
-video {
-    max-width: 100%;     /* 最大宽度为100% */
-    max-height: 100%;    /* 最大高度为100% */
+    height: auto;        /* 高度填充容器 */
+    max-width: 1728px;   /* 设置最大宽度为1728px，防止布局过宽 */
+    max-height: 890;     /* 设置最大高度为890px，防止布局过长 */
+    left: 0;             /* 水平居中对齐 */
+    top: 226px;  /* 修改为226px，与web-banner的高度一致 */
+    position: absolute;  /* 绝对定位 */
+    object-fit: contain;
 }
 
 .language-content {
@@ -268,21 +269,12 @@ video {
     display: block;      /* 激活时显示语言内容 */
 }
 
-/* 隐藏视频控件 */
-video::-webkit-media-controls {
-    display: none !important; /* 隐藏视频控件 */
-}
-
-/* 确保视频容器可点击 */
-#home-content {
-    cursor: pointer;     /* 鼠标悬停时显示为手型 */
-}
-
 .separator-line {
     position: absolute;  /* 改为absolute定位以精确控制位置 */
     top: 226px;          /* 距离顶部226px */
     left: 0;             /* 距离左侧0 */
-    width: 1728px;       /* 设置宽度为1728px */
+    width: 100%;       /* 设置宽度为1728px */
+    max-width: 1728px;   /* 设置最大宽度为1728px */
     height: 1px;         /* 设置高度为1px */
     background-color: #000; /* 设置背景颜色为黑色 */
     z-index: 1000;       /* 层级设置为1000 */
@@ -349,14 +341,17 @@ video::-webkit-media-controls {
 }
 
 .work-container {
-    width: 1728px;
-    height: 1380px;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    padding-left: 0; /* 修改为0以消除左侧内边距影响 */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    width: 100%; /* 设置容器宽度为100%，占满父级容器 */
+    max-width: 1728px; /* 宽度设置为1728px */
+    height: 1380px; /* 设置容器高度为1380px */
+    margin: 0 0;         /* 移除外边距 */
+    padding-top: 0px; /* 设置顶部内边距为0px，无额外空间 */
+    padding-bottom: 0px; /* 设置底部内边距为32px，为下方内容留出空间 */
+    padding-left: 0px; /* 设置左侧内边距为0，消除默认内边距影响 */
+    display: flex; /* 使用弹性布局 */
+    position: relative; /* 设置相对定位，使子元素可以相对于此容器定位 */
+    flex-direction: row; /* 设置主轴方向为水平 */
+    align-items: flex-start; /* 设置交叉轴对齐方式为顶部对齐 */
 }
 
 .work-menu {
@@ -372,42 +367,76 @@ video::-webkit-media-controls {
 }
 
 .column-projects {
-    width: 1445px;
-    height: 1316px;
-    gap: 32px;
-    padding-top: 0px;
-    padding-left: 0px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%; /* 设置宽度为100%，占满父级容器 */
+    max-width: 1445px; /* 设置最大宽度为1445px，防止布局过宽 */
+    height: 1316px; /* 设置高度为1316px */
+    gap: 32px; /* 设置子元素间距为32px */
+    margin-left: 32px; /* 添加左侧内边距，为项目列表留出空间 */
+    display: flex; /* 使用弹性布局 */
+    flex-wrap: wrap; /* 确保子元素可以换行 */
+    position: relative; /* 添加相对定位，使子元素可以相对于此容器定位 */
 }
 
 .project-item {
     width: 438px;
     height: 305px;
-    min-width: 438px;
-    max-width: 540px;
-    min-height: 305px;
-    background-color: #e0e0e0; /* 添加背景色方便可视化 */
+    background-color: #e0e0e0;
     display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 24px;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
     color: #000;
+    background-size: cover;
+    background-position: center;
 }
 
-.work-item {
-    width: 100%;
-    height: 300px;
-    background-color: #f0f0f0;
-    margin-bottom: 32px;
-    line-height: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 300;
-    color: #000;
+/* 为每个项目项添加独立的背景图片 */
+.project-item.project-1 {
+    background-image: url('../images/1.png');
+}
+
+.project-item.project-2 {
+    background-image: url('../images/2.png');
+}
+
+.project-item.project-3 {
+    background-image: url('../images/3.png');
+}
+
+.project-item.project-4 {
+    background-image: url('../images/4.png');
+}
+
+.project-item.project-5 {
+    background-image: url('../images/5.png');
+}
+
+.project-item.project-6 {
+    background-image: url('../images/6.png');
+}
+
+.project-item.project-7 {
+    background-image: url('../images/7.png');
+}
+
+.project-item.project-8 {
+    background-image: url('../images/8.png');
+}
+
+.project-item.project-9 {
+    background-image: url('../images/9.png');
+}
+
+.project-item.project-10 {
+    background-image: url('../images/10.png');
+}
+
+.copyright {
+    width: 224px;
+    height: 27px;
+    top: 1067px;
+    left: 1474px;
+    background-color: transparent; /* 背景颜色为透明 */
+    position: fixed;     /* 修改为fixed定位，使其固定在页面顶部 */
+
 }
